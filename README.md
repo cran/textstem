@@ -1,4 +1,4 @@
-textstem   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
+textstem   
 ============
 
 
@@ -9,8 +9,10 @@ developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repos
 Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
-<a href="https://img.shields.io/badge/Version-0.0.1-orange.svg"><img src="https://img.shields.io/badge/Version-0.0.1-orange.svg" alt="Version"/></a>
-</p>
+[![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
+
+![](tools/textstem_logo/r_textstem.png)
+
 **textstem** is a tool-set for stemming and lemmatizing words. Stemming
 is a process that removes affixes. Lemmatization is the process of
 grouping inflected forms together as a single base form.
@@ -29,6 +31,10 @@ Table of Contents
         -   ["Be" Stemming vs. Lemmatizing](#be-stemming-vs-lemmatizing)
     -   [Stemming](#stemming)
     -   [Lemmatizing](#lemmatizing)
+        -   [Default Lemma Dictionary](#default-lemma-dictionary)
+        -   [Hunspell Lemma Dictionary](#hunspell-lemma-dictionary)
+        -   [koRpus Lemma Dictionary](#korpus-lemma-dictionary)
+        -   [Lemmatization Speed](#lemmatization-speed)
     -   [Combine With Other Text Tools](#combine-with-other-text-tools)
 
 Functions
@@ -173,10 +179,12 @@ stemming of several small strings.
     ## [5] NA                                         
     ## [6] "The doggi, well thei aren't joyfulli run."
     ## [7] "The daddi ar come over..."                
-    ## [8] "Thi i 34. 546 abov"
+    ## [8] "Thi i 34.546 abov"
 
 Lemmatizing
 -----------
+
+### Default Lemma Dictionary
 
 Lemmatizing is the ["grouping together the inflected forms of a word so
 they can be analysed as a single item"
@@ -208,7 +216,9 @@ generating a lemma lookup table for use in `lemmatize_strings`.
     ## [5] NA                                         
     ## [6] "The doggy, good they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34. 546 above"
+    ## [8] "This be 34.546 above"
+
+### Hunspell Lemma Dictionary
 
 This lemmatization uses the
 [**hunspell**](https://CRAN.R-project.org/package=hunspell) package to
@@ -224,13 +234,15 @@ generate lemmas.
     ## [5] NA                                           
     ## [6] "The doggy, well they aren't joyful running."
     ## [7] "The daddy are come over..."                 
-    ## [8] "This is 34. 546 above"
+    ## [8] "This is 34.546 above"
+
+### koRpus Lemma Dictionary
 
 This lemmatization uses the
 [**koRpus**](https://CRAN.R-project.org/package=koRpus) package and the
 [TreeTagger](http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)
 program to generate lemmas. You'll have to get TreeTagger set up,
-preferably in your machine's the root directory.
+preferably in your machine's root directory.
 
     lemma_dictionary_tt <- make_lemma_dictionary(y, engine = 'treetagger')
     lemmatize_strings(y, lemma_dictionary_tt)
@@ -242,7 +254,9 @@ preferably in your machine's the root directory.
     ## [5] NA                                         
     ## [6] "The doggy, well they aren't joyfully run."
     ## [7] "The daddy be come over..."                
-    ## [8] "This be 34. 546 above"
+    ## [8] "This be 34.546 above"
+
+### Lemmatization Speed
 
 It's pretty fast too. Observe:
 
@@ -261,15 +275,16 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.09608579 secs
+    ## Time difference of 0.8978779 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.1 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.9 seconds.
 
 Combine With Other Text Tools
 -----------------------------
 
 This example shows how stemming/lemmatizing might be complemented by
-other test tools such as `replace_contraction`.
+other text tools such as `replace_contraction` from the **textclean**
+package.
 
     library(textclean)
 
