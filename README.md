@@ -4,12 +4,12 @@ textstem
 
 [![Project Status: Active - The project has reached a stable, usable
 state and is being actively
-developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active)
+developed.](https://www.repostatus.org/badges/0.1.0/active.svg)](https://www.repostatus.org/#active)
 [![Build
 Status](https://travis-ci.org/trinker/textstem.svg?branch=master)](https://travis-ci.org/trinker/textstem)
 [![Coverage
 Status](https://coveralls.io/repos/trinker/textstem/badge.svg?branch=master)](https://coveralls.io/r/trinker/textstem?branch=master)
-[![](http://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
+[![](https://cranlogs.r-pkg.org/badges/textstem)](https://cran.r-project.org/package=textstem)
 
 ![](tools/textstem_logo/r_textstem.png)
 
@@ -227,14 +227,14 @@ generate lemmas.
     lemma_dictionary_hs <- make_lemma_dictionary(y, engine = 'hunspell')
     lemmatize_strings(y, dictionary = lemma_dictionary_hs)
 
-    ## [1] "the dirty dog has eat the pie"              
-    ## [2] "that shameful pooch is tricky and sneaky"   
-    ## [3] "He open and then opened the food bag"       
-    ## [4] "There are sky of blue and red rose too!"    
+    ## [1] "the dirty dog ha eat the pie"               
+    ## [2] "that shameful pooch i tricky and sneaky"    
+    ## [3] "He open and then reopen the food bag"       
+    ## [4] "There are sky of blue and re rose too!"     
     ## [5] NA                                           
     ## [6] "The doggy, well they aren't joyful running."
     ## [7] "The daddy are come over..."                 
-    ## [8] "This is 34.546 above"
+    ## [8] "This i 34.546 above"
 
 ### koRpus Lemma Dictionary
 
@@ -275,9 +275,9 @@ It's pretty fast too. Observe:
 
     (toc <- Sys.time() - tic)
 
-    ## Time difference of 0.8978779 secs
+    ## Time difference of 0.8516021 secs
 
-That's 2,912 rows of text, or 42,708 words, in 0.9 seconds.
+That's 2,912 rows of text, or 42,708 words, in 0.85 seconds.
 
 Combine With Other Text Tools
 -----------------------------

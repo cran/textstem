@@ -19,6 +19,18 @@ And constructed with the following guidelines:
 
 
 
+textstem 0.2.0
+----------------------------------------------------------------
+
+CHANGES
+
+* **koRpus** package now has a heavy link to language modules.
+  **koRpus.lang.en** added as a dependency package per Meik
+  Michalke's API change/workflow.
+
+
+
+
 textstem 0.1.0 - 0.1.2
 ----------------------------------------------------------------
 
